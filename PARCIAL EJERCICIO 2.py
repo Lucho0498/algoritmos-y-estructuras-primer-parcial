@@ -133,6 +133,7 @@ def ordenarpornombre(superheroes):
     for i in superheroes:
         print(i)
 
+print('orden por nombre')
 ordenarpornombre(superheroes)
 
 def encontrarposicion(superheroes, personaje):
@@ -142,12 +143,13 @@ def encontrarposicion(superheroes, personaje):
             return i
         i += 1
     return -1
-
+print()
 posicionthing = encontrarposicion(superheroes, "The Thing")
 posicionrocket = encontrarposicion(superheroes, "Rocket Raccoon")
 
 print(f"The Thing está en la posición: {posicionthing}")
 print(f"Rocket Raccoon está en la posición: {posicionrocket}")
+print()
 
 def Listarvillanos(superheroes):
     for superheroe in superheroes:
@@ -156,6 +158,7 @@ def Listarvillanos(superheroes):
             
 Listarvillanos(superheroes)
 
+#paso los villanos a una cola
 def PasarVillanosAunaCola(superheroes):
     cola = Queue()
     for superheroe in superheroes:
@@ -172,23 +175,26 @@ def Superheroescuyonombreempiezacon(superheroes):
             print(superheroe.nombre)
         elif superheroe.nombre[0] in ["G", "W"]:
             print(superheroe.nombre)
-
+print()
+print('nombres que empiezan con "Bl", "My", "G", "W":')
 Superheroescuyonombreempiezacon(superheroes)
 
 def listarporordennombrereal(superheroes):
     superheroes.sort_by_criterion("nombrereal")
     for i in superheroes:
         print(i)
-
+print()
+print('orden por nombre real:')
 listarporordennombrereal(superheroes)
 
 def listarporordendefecha(superheroes):
     superheroes.sort_by_criterion("fechaaparicion")
     for i in superheroes:
         print(i)
-        
+print('orden por fecha de aparicion:')
 listarporordendefecha(superheroes)
 
+#cambio nombre real de Ant Man  
 def modificarnombreScottLang(superheroes):
     index = superheroes.search("Ant-Man", "nombre")
     if index is not None:
@@ -200,7 +206,7 @@ def Mostrarsegunbiografia(superheroes):
     for superheroe in superheroes:
         if "suit" in superheroe.biografia or "time-traveling" in superheroe.biografia:
             print(superheroe.nombre)
-
+print()
 print("personaje que en su biografia menciona suit o time-traveling:")
 Mostrarsegunbiografia(superheroes)
 
@@ -211,5 +217,6 @@ def EliminarElectroZemo():
     indexZemo =superheroes.search("Baron Zemo", "nombre")
     if indexZemo is not None:
         superheroes.delete_value("Baron Zemo", "nombre")
-
+print()
+print('se eliminaron Electro y Zemo')
 EliminarElectroZemo()
